@@ -5,7 +5,7 @@ import { User } from './user.model';
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class UsersService {
   // stream which we will use to manage our current user
   // Subject "read/write" stream
   // BehaviorSubject has a special property in that it stores the last value /
@@ -20,5 +20,5 @@ export class UserService {
 }
 
 export const userServiceInjectables: Array<any> = [ 
-  UserService
+  UsersService
 ];

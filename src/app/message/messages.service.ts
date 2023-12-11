@@ -72,7 +72,7 @@ export class MessagesService {
     this.updates$.next((messages: Message[]) => messages.concat(newMessage));
   }
 
-  messageForThreadUser(thread: Thread, user: User): Observable<Message> {
+  messagesForThreadUser(thread: Thread, user: User): Observable<Message> {
     return this.newMessages$.pipe(
       filter((message: Message) => {
         return message.thread.id === thread.id && message.author.id !== user.id;
