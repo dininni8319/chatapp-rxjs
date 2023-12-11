@@ -3,18 +3,19 @@ import { Message } from "./message.model";
 import { Thread } from "../thread/thread.model";
 import { User } from "../user/user.model";
 
-describe("MessageSErvice", () => {
+describe("MessageService", () => {
   it('should test',() => {
     const user: User = new User("Salvo", '')
     const thread: Thread = new Thread("t1", "Salvo", '')
+
     const m1: Message = new Message({
-      author: User,
+      author: user,
       thread: thread,
       text: 'Hello World!',
     })
 
     const m2: Message = new Message({
-      author: User,
+      author: user,
       thread: thread,
       text: "Bye Bye"
     })
@@ -22,13 +23,14 @@ describe("MessageSErvice", () => {
     const messagesService: MessagesService = new MessagesService()
     // listen to each message as it come in
 
-    messagesService.newMessages
+    messagesService.newMessages$
       .subscribe((message: Message) => {
         console.log("=> newMessages: " + message.text)
+        
       })
 
     // list of streams of most current messages
-    messagesService.messages
+    messagesService.messages$
       .subscribe((messages: Message[]) => {
         console.log("=> messages: " + messages.length)
       })
@@ -36,8 +38,8 @@ describe("MessageSErvice", () => {
     messagesService.addMessage(m2)
    
     // => messages: 1
-   // => newMessages: Hi!
+    // => newMessages: Hi!
     // => messages: 2
-   // => newMessages: Bye!
+    // => newMessages: Bye!
   })
 })
