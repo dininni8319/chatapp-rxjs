@@ -1,17 +1,23 @@
-<div class="container">
-  <div class="row">
+<div class="container fill">
+  <div class="d-flex align-items-end justify-content-end fill">
     <!-- <div class="col-md-4">
       <app-chat-thread-list></app-chat-thread-list>
     </div>
     <div class="col-md-8">
-      <app-chat-window></app-chat-window>
-    </div> [thread]="theard"-->
-    <div class="col-md-12">
+      <app-chat-window></app-chat-window> -->
+    <div class="col-12 col-md-6 shadow-sm bg-gray-ligth chat-thread-border mb-5">
+      <div class="fill">
+          <h5 class="text-center py-1 bg-secondary text-white">
+          <i class="fa fa-comments-o" aria-hidden="true"></i>
+          Chat Threads
+          </h5>
+      </div>
       <app-chat-thread
-        *ngFor="let theard of threads | async"
-        
+        *ngFor="let theard of threads | async;let i = index"
+        [thread]="theard"
+        [index]="i"
       >
-
       </app-chat-thread>
-  </div>
+    </div>
+  </div> 
 </div>
