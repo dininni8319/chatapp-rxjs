@@ -1,1 +1,17 @@
+<div class="container">
+  <div class="row">
+    <!-- <div class="col-md-4">
+      <app-chat-thread-list></app-chat-thread-list>
+    </div>
+    <div class="col-md-8">
+      <app-chat-window></app-chat-window>
+    </div> [thread]="theard"-->
+    <div class="col-md-12">
+      <app-chat-thread
+        *ngFor="let theard of threads | async"
+        
+      >
 
+      </app-chat-thread>
+  </div>
+</div>

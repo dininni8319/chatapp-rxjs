@@ -14,12 +14,12 @@ import { Observable } from 'rxjs';
 })
 
 export class ChatThreadsComponent implements OnInit {
-  theards!: Observable<any>
+  threads!: Observable<any>
 
   constructor(
     public threadsService: ThreadsService
   ) { 
-    this.theards = threadsService.orderedThreads
+    this.threads = threadsService.orderedThreads
   }
 
   ngOnInit(): void {

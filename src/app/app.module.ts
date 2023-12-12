@@ -3,11 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { ChatThreadsComponent } from './chat-threads/chat-threads.component';
+import { ChatThreadComponent } from './chat-thread/chat-thread.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChatThreadsComponent
+    ChatThreadsComponent,
+    ChatThreadComponent
   ],
   imports: [
     BrowserModule
@@ -15,4 +17,5 @@ import { ChatThreadsComponent } from './chat-threads/chat-threads.component';
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
